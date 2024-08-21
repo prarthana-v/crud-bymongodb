@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+  </head>
+  <body>
+    <table border="1" align="center">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% record.map((val,i)=>{ %>
+        <tr>
+          <td><%= val.id %></td>
+          j
+          <td><%= val.name %></td>
+          <td><%= val.password %></td>
+          <td><%= val.password %></td>
+          <td>
+            <a href="/deleteRecord?deleteId=<%= val.id %>">Delete</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a href="/add">Add</a>
+  </body>
+</html>

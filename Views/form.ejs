@@ -7,20 +7,54 @@
   </head>
   <body>
     <h1>Add user</h1>
-    <form action="/insertRecord" method="post">
-      <table border="1">
+    <form action="/insertRecord" method="post" enctype="multipart/form-data">
+      <table border="1" cellpadding="3" cellspacing="2">
         <thead>
           <tr>
             <th>Name:-</th>
-            <th><input type="text" name="name" /></th>
+            <th>
+              <input type="text" name="name" />
+            </th>
           </tr>
           <tr>
             <th>Email:-</th>
             <th><input type="text" name="email" /></th>
           </tr>
           <tr>
-            <th>Password</th>
+            <th>Password :-</th>
             <th><input type="text" name="password" /></th>
+          </tr>
+          <tr>
+            <th>Gender :-</th>
+            <th>
+              <input type="radio" value="male" name="gender" />Male
+              <input type="radio" value="female" name="gender" />Female
+            </th>
+          </tr>
+          <tr>
+            <th>Hobbies :-</th>
+            <th>
+              <input type="checkbox" value="eat" name="hobby" />Eat
+              <input type="checkbox" value="talk" name="hobby" />talk
+              <input type="checkbox" value="walk" name="hobby" />walk
+              <input type="checkbox" value="sleep" name="hobby" />Sleep
+            </th>
+          </tr>
+          <tr>
+            <th>City :-</th>
+            <th>
+              <select name="city" id="">
+                <option>--select city--</option>
+                <% city = ["surat","rajkot","bharuch","bhavnagar","manar"]
+                city.map((c)=>{ %>
+                <option value="<%= c %>"><%= c %></option>
+                <% }) %>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>Image :-</th>
+            <th><input type="file" name="image" /></th>
           </tr>
           <tr>
             <th>
@@ -29,6 +63,7 @@
           </tr>
         </thead>
       </table>
+      <a href="/" class="btn btn-primary">View</a>
     </form>
   </body>
 </html>
